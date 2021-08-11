@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class moment : MonoBehaviour
+{
+    
+    
+    public Joystick joystick;
+    public float runspeed = 40f;
+    float horizontalmove = 0f;
+
+   
+    // Update is called once per frame
+    public void Update()
+    {
+        if (joystick.Horizontal >= 0.2f)
+        {
+
+            transform.Translate(new Vector3(2, 0, 0) * runspeed * Time.deltaTime);
+        }
+
+        else if (joystick.Horizontal <= -0.2f) {
+            transform.Translate(new Vector3(-2, 0, 0) * runspeed * Time.deltaTime);
+        }
+       
+    }
+   
+
+}
