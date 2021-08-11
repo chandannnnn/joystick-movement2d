@@ -1,9 +1,12 @@
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class moment : MonoBehaviour
 {
+
     
     
     public Joystick joystick;
@@ -22,6 +25,15 @@ public class moment : MonoBehaviour
 
         else if (joystick.Horizontal <= -0.2f) {
             transform.Translate(new Vector3(-2, 0, 0) * runspeed * Time.deltaTime);
+        }
+        if (joystick.Vertical >= 0.2f)
+        {
+
+            transform.Translate(new Vector3(0, 2, 0) * runspeed * Time.deltaTime);
+        }
+
+        else if (joystick.Vertical <= -0.2f) {
+            transform.Translate(new Vector3(0, -2, 0) * runspeed * Time.deltaTime);
         }
        
     }
